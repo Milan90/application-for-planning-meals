@@ -1,0 +1,48 @@
+{% extends "__base__.html" %}
+{% block content %}
+    <h1>{{ message }}</h1>
+    <form method="post">
+        <div class="dashboard-content border-dashed p-3 m-4 view-height">l
+            <div class="row border-bottom border-3 p-1 m-1">
+                <div class="col noPadding">
+                    <h3 class="color-header text-uppercase">NOWY PLAN</h3>
+                </div>
+                <div class="col d-flex justify-content-end mb-2 noPadding">
+                    <label>
+                        <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">
+                            Zapisz
+                        </button>
+                    </label>
+                </div>
+            </div>
+
+            <div class="schedules-content">
+
+                <div class="form-group row">
+                    <label for="planName"
+                           class="col-sm-2 label-size col-form-label">
+                        Nazwa planu
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" id="planName"
+                               placeholder="Nazwa planu">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="planDescription"
+                           class="col-sm-2 label-size col-form-label">
+                        Opis planu
+                    </label>
+                    <div class="col-sm-10">
+                    <textarea class="form-control" rows="5" name="description" id="planDescription"
+                              placeholder="Opis planu"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% csrf_token %}
+    </form>
+
+{% endblock content %}
+
+{% block title %}{% endblock %}
